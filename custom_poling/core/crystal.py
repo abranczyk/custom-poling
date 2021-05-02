@@ -1,6 +1,7 @@
 import numpy as np
-from pmf import pmf
 import matplotlib.pyplot as plt
+
+from custom_poling.utils.pmf import pmf
 
 class Crystal:
     """ A class for a poled crystal.

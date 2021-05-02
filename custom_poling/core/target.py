@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from amplitude_function import AmplitudeFunction
+from custom_poling.utils.amplitude_function import AmplitudeFunction
 
 class Target:
 

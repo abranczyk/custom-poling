@@ -1,7 +1,8 @@
 import numpy as np
-from pmf import pmf
 import matplotlib.pyplot as plt
-from crystal import Crystal
+
+from custom_poling.core.crystal import Crystal
+from custom_poling.utils.pmf import pmf
 
 class CustomCrystal(Crystal):
 
