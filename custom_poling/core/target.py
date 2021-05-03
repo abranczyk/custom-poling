@@ -19,7 +19,7 @@ class Target:
         plt.plot(self.k_array,np.abs(self.pmf),label='abs')
         plt.plot(self.k_array,np.real(self.pmf),'--',label='real')
         plt.plot(self.k_array,np.imag(self.pmf),'--',label='imag')
-        plt.xlabel('Delta k')
+        plt.xlabel(r'$\Delta k$')
         plt.ylabel('Target PMF')
         plt.legend()
         plt.show()
