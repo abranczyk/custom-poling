@@ -29,21 +29,5 @@ class CustomCrystal(Crystal):
         self.pmf = super().compute_pmf(self.domain_configuration,k_array)
         return self.pmf
 
-    # def plot_pmf(self, domain_configuration, k_array):
-    #     """Plots the phasematching function (PMF) as a function of k for a given domain_configuration.
-
-    #     Args:
-    #         domain_configuration (list of int): elements of list must be +1 or -1
-    #         k_array (array of floats)
-
-    #     Returns:
-    #         Plot of PMF as a function of k_array
-    #     """
-    #     pmf = self.pmf(domain_configuration, k_array)
-    #     plt.plot(k_array,np.abs(pmf),label='abs')
-    #     plt.plot(k_array,np.real(pmf),'--',label='real')
-    #     plt.plot(k_array,np.imag(pmf),'--',label='imag')
-    #     plt.xlabel('Delta k')
-    #     plt.ylabel('PMF')
-    #     plt.legend()
-    #     plt.show()
+    def plot_domains(self,n_max=None): 
+        super().plot_domains(self.domain_configuration,n_max)

@@ -62,8 +62,13 @@ class Crystal:
         plt.legend()
         plt.show()
 
-    def plot_domains(self,domain_configuration):
-        plt.step(self.domain_walls,[domain_configuration[0]]+domain_configuration)
+    def plot_domains(self,domain_configuration,n_max=None):
+        x_axis = self.domain_walls
+        y_axis = np.concatenate(([domain_configuration[0]],domain_configuration))
+        if n_max != None and n_max < len(x_axis):
+            x_axis = x_axis[0:n_max]
+            y_axis = y_axis[0:n_max]
+        plt.step(x_axis,y_axis)
         plt.xlabel('z')
         plt.ylabel('g(z)')
         plt.ylim([-1.2, 1.2])
