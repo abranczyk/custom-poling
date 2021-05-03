@@ -61,3 +61,10 @@ class Crystal:
         plt.ylabel('PMF')
         plt.legend()
         plt.show()
+
+    def plot_domains(self,domain_configuration):
+        plt.step(self.domain_walls,[domain_configuration[0]]+domain_configuration)
+        plt.xlabel('z')
+        plt.ylabel('g(z)')
+        plt.ylim([-1.2, 1.2])
+        plt.show()
