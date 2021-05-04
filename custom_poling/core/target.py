@@ -24,7 +24,7 @@ class Target:
         plt.legend()
         plt.show()
 
-    def compute_amplitude(self,k,z_array,dz,z0=0):
+    def compute_amplitude(self,k,z_array,z0=0):
         """Computes the target amplitude.
         
         Returns:
@@ -32,11 +32,10 @@ class Target:
         """
         self.k = k
         self.z_array = z_array
-        self.dz = dz
         self.z0 = z0
         amplitude = []
         for z1 in self.z_array:
-            amplitude = amplitude + [AmplitudeFunction(self.pmf,self.k_array,k,z1,dz,z0).compute()]
+            amplitude = amplitude + [AmplitudeFunction(self.pmf,self.k_array,k,z1,z0).compute()]
         self.amplitude = np.array(amplitude)/(2*np.pi)
         return self.amplitude
 

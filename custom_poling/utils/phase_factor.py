@@ -6,9 +6,7 @@ class PhaseFactor:
         self.k1 = k1
         self.k2 = k2
         self.z = z
-        self.dz = dz
-        self.z_array = np.arange(z0, self.z + self.dz, self.dz)
+        self.z0 = z0
 
     def compute(self):
-        kernel = np.exp(-1j * (self.k1 - self.k2) * self.z_array)
-        return np.sum(kernel) * self.dz
+        return 1j*(np.exp(-1j*(self.k1-self.k2)*self.z)-np.exp(-1j*(self.k1-self.k2)*self.z0))/(self.k1-self.k2)
