@@ -1,7 +1,5 @@
 import numpy as np
 
-from custom_poling.utils.phase_factor import PhaseFactor
-
 class AmplitudeFunction:
 
     def __init__(self,pmf,k_array,k,z,z0=0):
