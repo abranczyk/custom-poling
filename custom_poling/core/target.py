@@ -1,8 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from custom_poling.utils.amplitude_function import AmplitudeFunction
-
 class Target:
 
     def __init__(self,pmf_func,k_array):
@@ -35,7 +33,12 @@ class Target:
         self.z0 = z0
         amplitude = []
         for z1 in self.z_array:
-            amplitude = amplitude + [AmplitudeFunction(self.pmf,self.k_array,k,z1,z0).compute()]
+            phase = lambda k1,k2,za,z0a: 1j*(np.exp(-1j*(k1-k2)*za)-np.exp(-1j*(k1-k2)*z0a))/(k1-k2)
+            phase_factor = phase(self.k_array,self.k,z1,self.z0)
+            self.dk = self.k_array[1]-self.k_array[0]
+            kernel = self.pmf * phase_factor
+            result = np.sum(kernel) * self.dk
+            amplitude = amplitude + [result]
         self.amplitude = np.array(amplitude)/(2*np.pi)
         return self.amplitude
 
@@ -52,3 +55,4 @@ class Target:
         plt.ylabel('Target Amplitude')
         plt.legend()
         plt.show()
+
