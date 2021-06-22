@@ -37,7 +37,7 @@ class CustomCrystal(Crystal):
         super().plot_domains(self.domain_configuration,n_max)
 
     def compute_amplitude(self,k):
-        self.amplitude = []
-        for z in self.domain_middles:
-            self.amplitude = self.amplitude + [pmf(self.domain_walls,self.domain_configuration, k)]
-        return self.amplitude
+        self.wall_amplitudes = []
+        for z in self.domain_walls:
+            self.wall_amplitudes = self.wall_amplitude + [pmf(self.domain_walls,self.domain_configuration, k)]
+        return self.wall_amplitudes
