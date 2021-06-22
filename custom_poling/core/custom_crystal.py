@@ -26,7 +26,7 @@ class CustomCrystal(Crystal):
                 domain_configuration = domain_configuration + [-1]
                 amplitudes = amplitudes + [test_amplitudes[1]]
         self.domain_configuration = np.array(domain_configuration)
-        self.amplitudes = amplitudes
+        # self.amplitudes = amplitudes
         return self.domain_configuration
 
     def compute_pmf(self, k_array): 
@@ -36,8 +36,21 @@ class CustomCrystal(Crystal):
     def plot_domains(self,n_max=None): 
         super().plot_domains(self.domain_configuration,n_max)
 
-    def compute_amplitude(self,k):
-        self.wall_amplitudes = []
-        for z in self.domain_walls:
-            self.wall_amplitudes = self.wall_amplitude + [pmf(self.domain_walls,self.domain_configuration, k)]
-        return self.wall_amplitudes
+    def compute_amplitude(self,k,num_internal_points=0):
+        amplitude_one_domain = lambda z1,z2:2*np.pi*1j*(np.exp(-1j*k*z2)-np.exp(-1j*k*z1))/(2*np.pi*k)
+        amplitude = 0
+        self.amplitudes = [0]
+        z = self.z0
+        z_array = [self.z0]
+        for idx in range(len(self.domain_configuration)):
+            domain_width = (self.domain_walls[idx+1]-self.domain_walls[idx])
+            delta_z = domain_width/(num_internal_points+1)
+            amplitudes_in = []
+            for point in np.arange(1,num_internal_points+1):
+                z = self.domain_walls[idx]+point*delta_z
+                amplitudes_in = amplitudes_in + [amplitude + self.domain_configuration[idx]*amplitude_one_domain(self.domain_walls[idx],z)]
+                z_array = z_array + [z] 
+            amplitude = amplitude + self.domain_configuration[idx]*amplitude_one_domain(self.domain_walls[idx],self.domain_walls[idx+1])
+            self.amplitudes = self.amplitudes + amplitudes_in + [amplitude]
+            z_array = z_array + [self.domain_walls[idx+1]] 
+        return self.amplitudes,z_array
