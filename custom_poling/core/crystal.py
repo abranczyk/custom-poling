@@ -60,7 +60,7 @@ class Crystal:
         plt.xlabel(r'$\Delta k$')
         plt.ylabel('PMF')
         plt.legend()
-        plt.show()
+        return plt
 
     def plot_domains(self,domain_configuration,n_max=None):
         x_axis = self.domain_walls
@@ -72,4 +72,4 @@ class Crystal:
         plt.xlabel('z')
         plt.ylabel('g(z)')
         plt.ylim([-1.2, 1.2])
-        plt.show()
+        return plt
