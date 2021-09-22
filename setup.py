@@ -1,4 +1,4 @@
-"""Setup file for assets template."""
+"""Setup file for custom-poling module."""
 
 import setuptools
 
