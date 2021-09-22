@@ -20,7 +20,7 @@ class Target:
         plt.xlabel(r'$\Delta k$')
         plt.ylabel('Target PMF')
         plt.legend()
-        plt.show()
+        return plt
 
     def compute_amplitude(self,k,z_array,z0=0):
         """Computes the target amplitude.
@@ -54,5 +54,5 @@ class Target:
         plt.xlabel('z')
         plt.ylabel('Target Amplitude')
         plt.legend()
-        plt.show()
+        return.plt
 
