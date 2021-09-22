@@ -12,9 +12,7 @@ The custom_poling module can be used to design the domain configuration of a non
 
 ## For users
 
-### How to use this code
-
-#### Installation instructions
+### Installation instructions
 0. Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [pip](https://pip.pypa.io/en/stable/installation/) (and optionally [Miniconda](https://docs.conda.io/en/latest/miniconda.html)) installed.
 1. Open terminal.
 
@@ -40,7 +38,7 @@ pip install -e .
 ```
 5. You can now use the package. 
 
-#### How to use installed the package
+### How to use installed the package
 
 Now that you have the package installed, you can follow examples within the tutorial notebooks
 or see the simple example below (copy the code into a file `example.py` and execute within terminal using `python example.py`):
@@ -91,7 +89,7 @@ custom_crystal_gauss.plot_pmf()
 
 ## For contributers
 
-### Initial set-up and installing dependencies
+### Installation instructions
 0. Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [pip](https://pip.pypa.io/en/stable/installation/) (and optionally [Miniconda](https://docs.conda.io/en/latest/miniconda.html)) installed.
 1. Open terminal.
 
@@ -115,7 +113,9 @@ cd custom-poling
 ```
 pip install -r requirements.txt
 ```
-5. To make a contribution, first set up a remote branch (here called `my-contribution`) that is tracked:
+### How to contribute
+
+1. To make a contribution, first set up a remote branch (here called `my-contribution`) that is tracked:
 ```
 git checkout master
 git pull
@@ -127,7 +127,7 @@ git add .
 git commit -m 'initial working version of my contribution'
 git push -u origin my-contribution
 ```
-6. Before making a Pull Request always get the latest changes from master:
+2. Before making a Pull Request always get the latest changes from master:
 ```
 git checkout master
 git pull
@@ -140,10 +140,10 @@ git add .
 git commit -m 'merged updates from master'
 git push
 ```
-7. Go back to the `/custom-poling` repo on _GitHub_, switch to your contribution branch (same name: `my-contribution`), and click "Pull Request". Write a clear explanation of the feature.
-8. Under Reviewer, select Agata Branczyk.
-9. Click "Create Pull Request".
-10. Your Pull Request will be reviewed and, if everything is ok, it will be merged. 
+3. Go back to the `/custom-poling` repo on _GitHub_, switch to your contribution branch (same name: `my-contribution`), and click "Pull Request". Write a clear explanation of the feature.
+4. Under Reviewer, select Agata Branczyk.
+5. Click "Create Pull Request".
+6. Your Pull Request will be reviewed and, if everything is ok, it will be merged. 
 
 ## Resources
 
