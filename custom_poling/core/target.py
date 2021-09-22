@@ -54,5 +54,5 @@ class Target:
         plt.xlabel('z')
         plt.ylabel('Target Amplitude')
         plt.legend()
-        return.plt
+        return plt
 
