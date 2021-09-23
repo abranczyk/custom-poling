@@ -8,7 +8,7 @@ class Target:
         self.k_array = k_array
         self.pmf = self.pmf_func(k_array)
 
-    def plot_pmf(self):
+    def plot_pmf(self,show=True,save_as=False,fix_ticks=False):
         """Plots the taret phasematching function (PMF).
         
         Returns:
@@ -20,7 +20,16 @@ class Target:
         plt.xlabel(r'$\Delta k$')
         plt.ylabel('Target PMF')
         plt.legend()
-        return plt
+        if fix_ticks==True:
+            plt.xticks(rotation=45)
+        if type(save_as)==str:
+            plt.savefig(save_as)
+            plt.close()
+            print("Saved figure as: " + save_as)
+        if show==False:
+            plt.close()
+        if show:
+            plt.show()
 
     def compute_amplitude(self,k,z_array,z0=0):
         """Computes the target amplitude.
@@ -42,7 +51,7 @@ class Target:
         self.amplitude = np.array(amplitude)/(2*np.pi)
         return self.amplitude
 
-    def plot_amplitude(self):
+    def plot_amplitude(self,show=True,save_as=False,fix_ticks=False):
         """Plots the taret phasematching function (PMF).
         
         Returns:
@@ -54,5 +63,14 @@ class Target:
         plt.xlabel('z')
         plt.ylabel('Target Amplitude')
         plt.legend()
-        return plt
+        if fix_ticks==True:
+            plt.xticks(rotation=45)
+        if type(save_as)==str:
+            plt.savefig(save_as)
+            plt.close()
+            print("Saved figure as: " + save_as)
+        if show==False:
+            plt.close()
+        if show:
+            plt.show()
 

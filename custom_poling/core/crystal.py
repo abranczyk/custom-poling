@@ -44,7 +44,7 @@ class Crystal:
         self.pmf = pmf(self.domain_walls, self.domain_configuration, self.k_array)
         return self.pmf
     
-    def plot_pmf(self):
+    def plot_pmf(self,show=True,save_as=False,fix_ticks=False):
         """Plots the phasematching function (PMF) as a function of k for a given domain_configuration.
 
         Args:
@@ -60,9 +60,18 @@ class Crystal:
         plt.xlabel(r'$\Delta k$')
         plt.ylabel('PMF')
         plt.legend()
-        return plt
+        if fix_ticks==True:
+            plt.xticks(rotation=45)
+        if type(save_as)==str:
+            plt.savefig(save_as)
+            plt.close()
+            print("Saved figure as: " + save_as)
+        if show==False:
+            plt.close()
+        if show:
+            plt.show()
 
-    def plot_domains(self,domain_configuration,n_max=None):
+    def plot_domains(self,domain_configuration,n_max=None,show=True,save_as=False,fix_ticks=False):
         x_axis = self.domain_walls
         y_axis = np.concatenate(([domain_configuration[0]],domain_configuration))
         if n_max != None and n_max < len(x_axis):
@@ -72,4 +81,13 @@ class Crystal:
         plt.xlabel('z')
         plt.ylabel('g(z)')
         plt.ylim([-1.2, 1.2])
-        return plt
+        if fix_ticks==True:
+            plt.xticks(rotation=45)
+        if type(save_as)==str:
+            plt.savefig(save_as)
+            plt.close()
+            print("Saved figure as: " + save_as)
+        if show==False:
+            plt.close()
+        if show:
+            plt.show()
