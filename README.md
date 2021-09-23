@@ -1,12 +1,3 @@
-# The custom_poling module
-
-This repo contains artefacts related to the custom_poling module. 
-
-## Structure of this repo:
-- `custom_poling`
-  - contains the module source code
-- Tutorial notebooks are in the root directory
-
 ## The module
 The custom_poling module can be used to design the domain configuration of a nonlinear crystal to approximate a desired phase-matching function. 
 
@@ -24,7 +15,7 @@ The custom_poling module can be used to design the domain configuration of a non
     ```
     conda activate my_env
     ```
-2. Within terminal,  clone repository:
+2. Within the terminal,  clone repository:
 ```bash
 git clone https://github.com/abranczyk/custom-poling.git
 ```
@@ -40,52 +31,7 @@ pip install -e .
 
 ### How to use installed the package
 
-Now that you have the package installed, you can follow examples within the tutorial notebooks
-or see the simple example below (copy the code into a file `example.py` and execute within terminal using `python example.py`):
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-from custom_poling.core.target import Target
-from custom_poling.core.custom_crystal import CustomCrystal
-
-# Crystal properties
-domain_width = 10.0e-6
-number_domains = 1000
-L = number_domains * domain_width
-k0 = np.pi / domain_width
-
-# Numerical integration parameters
-k_range = 100/L
-dk = k_range/401
-k_array = np.arange(k0-k_range/2,k0+k_range/2,dk)
-
-# Create a custom crystal object
-custom_crystal_gauss = CustomCrystal(domain_width,number_domains)
-domain_middles_gauss = custom_crystal_gauss.domain_middles
-
-#Define and plot the target function
-std = 10/L
-height = 0.00025
-target_pmf_gauss = lambda k:1j*height*np.exp(-(k-k0)**2/(2*std**2))*np.exp(1j * L/2 * k)
-# target_pmf_gauss =lambda k:-(1j*2/(np.pi**2)) * np.sin((k-k0) * L/2)*np.exp(1j * L/2 * (k-k0))/(k-k0)
-target_gauss = Target(target_pmf_gauss,k_array)
-target_gauss.plot_pmf()
-
-# Compute and plot the target amplitude
-target_amplitude_gauss = target_gauss.compute_amplitude(k0,domain_middles_gauss)
-target_gauss.plot_amplitude()
-
-# Compute and plot the custom domains
-custom_domains_gauss = custom_crystal_gauss.compute_domains(target_amplitude_gauss,k0)
-custom_crystal_gauss.plot_domains()
-
-# Compute and plot the PMF for the cystomized crystal
-
-custom_crystal_gauss.compute_pmf(k_array)
-custom_crystal_gauss.plot_pmf()
-```
+Now that you have the package installed, you can follow the examples within the tutorial notebooks or see the example in `example.py` (you can execute it within the terminal using `python example.py`).
 
 ## For contributers
 
@@ -101,7 +47,7 @@ custom_crystal_gauss.plot_pmf()
     ```
     conda activate my_env
     ```
-2. Within terminal, clone repository:
+2. Within the terminal, clone repository:
 ```bash
 git clone https://github.com/abranczyk/custom-poling.git
 ```
