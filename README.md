@@ -15,7 +15,7 @@ The custom_poling module can be used to design the domain configuration of a non
     ```
     conda activate my_env
     ```
-2. Within terminal,  clone repository:
+2. Within the terminal,  clone repository:
 ```bash
 git clone https://github.com/abranczyk/custom-poling.git
 ```
@@ -47,7 +47,7 @@ Now that you have the package installed, you can follow the examples within the 
     ```
     conda activate my_env
     ```
-2. Within terminal, clone repository:
+2. Within the terminal, clone repository:
 ```bash
 git clone https://github.com/abranczyk/custom-poling.git
 ```
