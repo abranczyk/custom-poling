@@ -1,4 +1,4 @@
-def mat_func(lambda_func,list1,list2):
+def func_to_matrix(lambda_func,list1,list2):
     A =[]
     for idx1 in list1:
         A_row = []
