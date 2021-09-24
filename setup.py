@@ -9,7 +9,7 @@ with open('requirements.txt') as fp:
     install_requires = fp.read()
 
 setuptools.setup(
-    name="custom-poling",
+    name="custom_poling",
     description="Custom poling module",
     long_description=long_description,
     packages=setuptools.find_packages(),
