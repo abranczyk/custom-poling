@@ -31,7 +31,10 @@ pip install -e .
 
 ### How to use installed the package
 
-Now that you have the package installed, you can follow the examples within the tutorial notebooks or see the example in `example.py` (you can execute it within the terminal using `python example.py`).
+Now that you have the package installed, you can:
+- follow the examples within the tutorial notebooks, or
+- see the example in `example.py` (you can execute it within the terminal using `python example.py`), or
+- write your own python code in a notebook or `.py` file. 
 
 ## For contributers
 
