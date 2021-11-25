@@ -29,9 +29,13 @@ class CustomCrystal(Crystal):
         # self.amplitudes = amplitudes
         return self.domain_configuration
 
+    # def compute_pmf(self, k_array): 
+    #     self.pmf = super().compute_pmf(self.domain_configuration,k_array)
+    #     return self.pmf
+
     def compute_pmf(self, k_array): 
-        self.pmf = super().compute_pmf(self.domain_configuration,k_array)
-        return self.pmf
+        pmf = super().compute_pmf(self.domain_configuration,k_array)
+        return pmf
 
     def plot_domains(self,n_max=None,show=True,save_as=False,fix_ticks=False): 
         super().plot_domains(self.domain_configuration,n_max,show,save_as,fix_ticks)
