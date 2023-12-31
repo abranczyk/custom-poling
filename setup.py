@@ -11,7 +11,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="custom_poling",
     description="Custom poling module",
-    long_description=long_description,
+    # long_description=long_description,
     packages=setuptools.find_packages(),
     # install_requires=install_requires,
     install_requires=["matplotlib>=2.1,<3.4"],

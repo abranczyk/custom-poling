@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "custom_poling"
-version = "0.0.3"
+version = "0.0.0"
 authors = [
   { name="Aggie Branczyk", email="aggiebranczyk@gmail.com" },
 ]
@@ -22,7 +22,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "matplotlib>=2.1,<3.6",
+    "matplotlib>=2.1,<3.4",
 ]
 
 [project.urls]
