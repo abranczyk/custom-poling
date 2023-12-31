@@ -6,3 +6,4 @@ src/custom-poling/__pycache__
 # Distribution / packaging
 pyproject.toml
 dist/
+custom_poling.egg-info/
