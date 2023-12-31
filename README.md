@@ -12,7 +12,7 @@ pip install custom-poling
 
 ## Examples and related material
 
-To learn how to use the module, check out the example jupyter notebooks and python scripts in the `examples` directory. 
+For guidance on how to use the module, check out the jupyter notebooks and python scripts in the `examples` directory. 
 
 The directory also contains supporting material for the following publications:
 - Drago, Christian, and Agata M. Brańczyk. "[Tunable frequency-bin multimode squeezed vacuum states of light.](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.106.043714)" Physical Review A 106.4 (2022): 043714.
