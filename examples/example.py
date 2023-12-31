@@ -36,7 +36,6 @@ custom_crystal_gauss.plot_domains(show=False, save_as="custom_domains_gauss.pdf"
 
 # Compute and plot the PMF for the cystomized crystal
 custom_crystal_gauss.compute_pmf(k_array)
-custom_crystal_gauss.plot_pmf(show=False, save_as="custom_crystal_gauss.pdf")
 
 # Compare the output PMF to the target PMF
 plt.plot(k_array,np.abs(target_gauss.pmf),label='Target PMF')
