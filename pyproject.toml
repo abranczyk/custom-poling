@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "custom_poling"
+version = "0.0.1"
+authors = [
+  { name="Aggie Branczyk", email="aggiebranczyk@gmail.com" },
+]
+description = "Module for designing the domain configuration of a nonlinear crystal to approximate a desired phase-matching function."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/abranczyk/custom-poling"
+Issues = "https://github.com/abranczyk/custom-poling"
