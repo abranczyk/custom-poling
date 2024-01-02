@@ -4,6 +4,7 @@ custom-poling/__pycache__/
 custom_poling/__pycache__/__init__.cpython-38.pyc
 custom_poling/__pycache__/__init__.cpython-39.pyc
 .DS_Store
+.python-version
 
 # Distribution / packaging
 pyproject.toml
