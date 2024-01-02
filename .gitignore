@@ -7,6 +7,7 @@ custom_poling/core/__pycache__
 custom_poling/utils/__pycache__
 .DS_Store
 .python-version
+.coverage
 
 # Distribution / packaging
 pyproject.toml
