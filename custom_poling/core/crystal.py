@@ -34,13 +34,13 @@ class Crystal:
 
         Args:
             domain_configuration (list of int): elements of list must be +1 or -1
-            k_array (array of floats)
+            k_array (array of floats): k values for which to compute the PMF 
 
         Returns:
             PMF as an array of floats
         """
         self.domain_configuration = domain_configuration
-        self.k_array = k_array
+        self.k_array = k_array 
         crystal_pmf = pmf(self.domain_walls, self.domain_configuration, self.k_array)
         return crystal_pmf
 
