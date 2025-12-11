@@ -14,6 +14,6 @@ setuptools.setup(
     # long_description=long_description,
     packages=setuptools.find_packages(),
     # install_requires=install_requires,
-    install_requires=["matplotlib>=2.1,<3.4"],
+    install_requires=["matplotlib>=2.1"],
     python_requires='>=3.6'
 )
